@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FBFF"
+    android:fitsSystemWindows="true"> <!-- Retaining original background color -->
+
+    <!--
+        The original 16dp padding is now simulated by padding the elements inside a
+        wrapper or applying larger margins/padding to individual elements where appropriate
+        to achieve a modern, spaced-out look.
+    -->
+
+    <!-- Course Title Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="0dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvCourseTitleAssign"
+            android:text="Course title"
+            android:textSize="28sp"
+            android:textColor="#1F2937"
+            android:textStyle="bold"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- Action Buttons Container (Original LinearLayout structure preserved) -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- Primary Action: Create Assignment -->
+        <!-- Swapping to MaterialButton for modern style/padding/corners -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateAssignmentCourse"
+            android:text="Create assignment"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="#673AB7"
+            app:cornerRadius="8dp"
+            android:paddingVertical="14dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textStyle="bold"/>
+
+        <!-- Secondary Action: Refresh -->
+        <!-- Using TextButton style for a subtle action -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRefreshAssignmentsCourse"
+            android:text="Refresh"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="#4B5563"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Assignment List Label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assignments"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4B5563"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Assignment List (Original RecyclerView structure preserved) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTeacherAssignments"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+</LinearLayout>

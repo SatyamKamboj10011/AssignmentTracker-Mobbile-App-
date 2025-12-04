@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FAFBFC"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HEADER / HERO -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="#5B21B6"
+            android:elevation="12dp">
+
+            <!-- Soft decorative blobs (kept but smaller / more subtle) -->
+            <View
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-80dp"
+                android:layout_marginEnd="-80dp"
+                android:alpha="0.08"
+                android:background="#FFFFFF" />
+
+            <View
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-60dp"
+                android:layout_marginTop="100dp"
+                android:alpha="0.05"
+                android:background="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Back button on top -->
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:tint="#FFFFFF"
+                    android:contentDescription="Back"
+                    android:padding="8dp" />
+
+                <!-- Title & due info near bottom -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Assignment title"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="4dp"
+                        android:shadowColor="#80000000"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="8" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp"
+                        android:background="#40FFFFFF"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="8dp"
+                        android:elevation="2dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:tint="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Due:"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/tvDue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="--"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#FDE047" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- CONTENT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp">
+
+            <!-- STATUS + TIME LEFT (no negative margin now) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:weightSum="2">
+
+                <!-- STATUS CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/statusCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="#FEE2E2"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_dialog_info"
+                            android:tint="#DC2626" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="STATUS"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#9CA3AF"
+                            android:letterSpacing="0.15" />
+
+                        <TextView
+                            android:id="@+id/tvCompletionStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Not submitted"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#DC2626"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- TIME LEFT CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="#DBEAFE"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:tint="#2563EB" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="TIME LEFT"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#9CA3AF"
+                            android:letterSpacing="0.15" />
+
+                        <TextView
+                            android:id="@+id/tvDaysLeft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="--"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#2563EB"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- DESCRIPTION CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#EEF2FF"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_info_details"
+                            android:tint="#6366F1" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Description"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description goes here..."
+                        android:textSize="15sp"
+                        android:textColor="#4B5563"
+                        android:lineSpacingExtra="6dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ATTACHMENT CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/attachmentCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#ECFEFF"
+                            android:padding="10dp"
+                            android:id="@+id/ivFileIcon"
+                            android:src="@android:drawable/ic_menu_save"
+                            android:tint="#06B6D4"
+                            android:contentDescription="Attachment" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Attachment"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="#F0F9FF"
+                        android:padding="16dp"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvFileName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="file.pdf"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#111827"
+                                android:ellipsize="middle"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/tvFileMeta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="500 KB • Uploaded"
+                                android:textSize="13sp"
+                                android:textColor="#6B7280"
+                                android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/stat_sys_download_done"
+                            android:tint="#059669"
+                            android:padding="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDownload"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:text="Open"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="#06B6D4"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="18dp"
+                            app:icon="@android:drawable/ic_menu_view"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FFFFFF"
+                            app:iconPadding="8dp"
+                            android:textAllCaps="false" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDownloadRemote"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="Online"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            app:strokeColor="#06B6D4"
+                            app:strokeWidth="2dp"
+                            android:textColor="#06B6D4"
+                            app:cornerRadius="18dp"
+                            app:icon="@android:drawable/ic_menu_share"
+                            app:iconGravity="textStart"
+                            app:iconTint="#06B6D4"
+                            app:iconPadding="8dp"
+                            android:textAllCaps="false" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- TEACHER CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/teacherCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#F3E8FF"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_myplaces"
+                            android:tint="#9333EA" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Instructor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="#FAF5FF"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/ivTeacherAvatar"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@android:drawable/ic_menu_myplaces"
+                            android:tint="#FFFFFF"
+                            android:background="#9333EA"
+                            android:padding="14dp"
+                            android:contentDescription="Teacher" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvTeacherName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Teacher name"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#111827" />
+
+                            <TextView
+                                android:id="@+id/tvCreatedInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Assigned on --"
+                                android:textSize="14sp"
+                                android:textColor="#6B7280"
+                                android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- GROUP CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/groupCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#D1FAE5"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_my_calendar"
+                            android:tint="#059669" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Your group"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvGroupHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View the members assigned with you for this assignment."
+                        android:textSize="15sp"
+                        android:textColor="#6B7280"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnShowGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="View group members"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#10B981"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="18dp"
+                        app:icon="@android:drawable/ic_menu_agenda"
+                        app:iconGravity="textStart"
+                        app:iconTint="#FFFFFF"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SUBMISSION HISTORY CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/submissionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#FEF3C7"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:tint="#D97706" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="Submission history"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#FFFBEB"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LAST SUBMISSION"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#9CA3AF"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvLastSubmitted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Not submitted yet"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- PROGRESS CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/progressCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="#EEF2FF"
+                            android:padding="10dp"
+                            android:src="@android:drawable/ic_menu_upload"
+                            android:tint="#6366F1" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:text="My progress"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#111827" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F9FAFB"
+                        android:padding="14dp"
+                        android:layout_marginBottom="16dp">
+
+                        <CheckBox
+                            android:id="@+id/cbStepRead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Read assignment materials"
+                            android:textSize="15sp"
+                            android:textColor="#111827"
+                            android:padding="6dp" />
+
+                        <CheckBox
+                            android:id="@+id/cbStepDraft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Draft outline / plan"
+                            android:textSize="15sp"
+                            android:textColor="#111827"
+                            android:layout_marginTop="4dp"
+                            android:padding="6dp" />
+
+                        <CheckBox
+                            android:id="@+id/cbStepFinal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Final version ready to submit"
+                            android:textSize="15sp"
+                            android:textColor="#111827"
+                            android:layout_marginTop="4dp"
+                            android:padding="6dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notes"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#6B7280"
+                        android:layout_marginBottom="8dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxStrokeColor="#D1D5DB"
+                        app:hintTextColor="#6B7280"
+                        android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etMyNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Personal notes, ideas or links"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:maxLines="6"
+                            android:padding="12dp"
+                            android:textSize="15sp"
+                            android:textColor="#111827" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSaveProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Save my progress"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#6366F1"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="18dp"
+                        app:icon="@android:drawable/ic_menu_save"
+                        app:iconGravity="textStart"
+                        app:iconTint="#FFFFFF"
+                        android:layout_marginBottom="10dp"
+                        android:textAllCaps="false" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewProgressHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="View my progress history"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:strokeColor="#6366F1"
+                        app:strokeWidth="2dp"
+                        android:textColor="#6366F1"
+                        app:cornerRadius="18dp"
+                        app:icon="@android:drawable/ic_menu_recent_history"
+                        app:iconGravity="textStart"
+                        app:iconTint="#6366F1"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- TEACHER-ONLY SUBMISSIONS BUTTON -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewSubmissions"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="View student submissions"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#3B82F6"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="20dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                app:icon="@android:drawable/ic_menu_agenda"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF"
+                android:textAllCaps="false" />
+
+            <!-- SUBMIT + SAVE BUTTONS -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit assignment"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#10B981"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="20dp"
+                android:layout_marginBottom="12dp"
+                app:icon="@android:drawable/ic_menu_upload"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveForLater"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Save to downloads"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="#F59E0B"
+                app:strokeWidth="2dp"
+                android:textColor="#F59E0B"
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/stat_sys_download"
+                app:iconGravity="textStart"
+                app:iconTint="#F59E0B"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditAssignment"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Edit assignment"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#6366F1"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                app:cornerRadius="20dp"
+                app:elevation="4dp"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF"
+                android:textAllCaps="false"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteAssignment"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Delete assignment"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="#DC2626"
+                app:strokeWidth="2dp"
+                android:textColor="#DC2626"
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconGravity="textStart"
+                app:iconTint="#DC2626"
+                android:textAllCaps="false"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

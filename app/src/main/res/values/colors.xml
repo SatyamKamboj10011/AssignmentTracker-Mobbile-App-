@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background colors -->
+    <color name="eduBackground">#F5F7FA</color>
+    <color name="eduAccentLight">#E3E8F3</color>
+
+    <!-- Primary colors -->
+    <color name="colorPrimary">#667eea</color>
+    <color name="colorPrimaryDark">#5568d3</color>
+    <color name="accent">#667eea</color>
+
+    <!-- Text colors -->
+    <color name="primaryText">#1A202C</color>
+    <color name="secondaryText">#718096</color>
+
+    <!-- Input and UI elements -->
+    <color name="inputBackground">#F7FAFC</color>
+    <color name="iconTint">#A0AEC0</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="borderColor">#E2E8F0</color>
+
+    <!-- System colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="inputStrokeColor">#CBD5E1</color>
+    <color name="inputStrokeColorFocused">#4CAF50</color>
+
+    <!-- Checkbox colors -->
+    <color name="checkboxTint">#4CAF50</color>
+
+    <!-- Create Assignment specific -->
+    <color name="createHeaderStart">#4CAF50</color>
+    <color name="createHeaderCenter">#388E3C</color>
+    <color name="createHeaderEnd">#2E7D32</color>
+    <color name="createBackgroundStart">#F0FDF4</color>
+    <color name="createBackgroundEnd">#E0F2FE</color>
+
+    <!-- Teacher Dashboard specific -->
+    <color name="teacherHeaderStart">#4CAF50</color>
+    <color name="teacherHeaderCenter">#43A047</color>
+    <color name="teacherHeaderEnd">#388E3C</color>
+    <color name="teacherBackgroundStart">#F0FDF4</color>
+    <color name="teacherBackgroundEnd">#ECFDF5</color>
+    <color name="teacherAvatarStart">#4CAF50</color>
+    <color name="teacherAvatarEnd">#81C784</color>
+
+    <!-- Status colors for teacher -->
+    <color name="educatorBadgeBg">#E8F5E9</color>
+    <color name="educatorBadgeText">#4CAF50</color>
+
+    <!-- Button variants -->
+    <color name="buttonGreen">#4CAF50</color>
+    <color name="buttonBlue">#3B82F6</color>
+    <color name="buttonBlueOutline">#3B82F6</color>
+    <color name="buttonGreenOutline">#10B981</color>
+    <color name="buttonRedOutline">#EF4444</color>
+    <color name="buttonRedBg">#FEF2F2</color>
+    <color name="buttonRedStroke">#FEE2E2</color>
+</resources>

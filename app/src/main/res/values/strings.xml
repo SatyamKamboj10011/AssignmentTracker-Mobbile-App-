@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AssignmentTracker</string>
+    <string name="welcome_format">Welcome,\n%s</string>
+    <string name="not_signed_in">Not signed in</string>
+    <string name="loading_role">Role: loading…</string>
+    <string name="role_format">Role: %s</string>
+    <string name="role_not_set">Role: (not set)</string>
+    <string name="role_error">Role: (error)</string>
+    <string name="logged_out">Logged out</string>
+</resources>

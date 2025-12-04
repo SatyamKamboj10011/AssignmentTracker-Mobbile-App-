@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/button_primary.xml -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#FFFFFF">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="0"
+                android:startColor="#FF6F00"
+                android:endColor="#FF8F00" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+</ripple>

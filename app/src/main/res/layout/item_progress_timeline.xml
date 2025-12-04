@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- DATE -->
+        <TextView
+            android:id="@+id/tvEntryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02 Dec 2025 • 3:30 PM"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#6366F1"
+            android:letterSpacing="0.02" />
+
+        <!-- NOTES -->
+        <TextView
+            android:id="@+id/tvEntryNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wrote the introduction and collected 3 sources."
+            android:textSize="15sp"
+            android:textColor="#1E293B"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4dp" />
+
+        <!-- PROGRESS STAGE BADGES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <!-- READ COMPLETED BADGE -->
+            <CheckBox
+                android:id="@+id/cbEntryRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read Material"
+                android:textSize="12sp"
+                android:textColor="#10B981"
+                android:buttonTint="#10B981"
+                android:enabled="false" />
+
+            <!-- DRAFT COMPLETED BADGE -->
+            <CheckBox
+                android:id="@+id/cbEntryDraft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drafted"
+                android:textSize="12sp"
+                android:textColor="#F59E0B"
+                android:buttonTint="#F59E0B"
+                android:layout_marginStart="14dp"
+                android:enabled="false" />
+
+            <!-- FINAL COMPLETED BADGE -->
+            <CheckBox
+                android:id="@+id/cbEntryFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Final Done"
+                android:textSize="12sp"
+                android:textColor="#3B82F6"
+                android:buttonTint="#3B82F6"
+                android:layout_marginStart="14dp"
+                android:enabled="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

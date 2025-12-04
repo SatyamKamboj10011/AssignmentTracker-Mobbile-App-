@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    tools:context=".Activities.MainActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero Section with Gradient -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#667EEA"
+                android:paddingBottom="80dp">
+
+                <!-- Top Spacer -->
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+                <!-- Logo Container -->
+                <FrameLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="16dp"
+                        app:cardBackgroundColor="#FFFFFF">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#667EEA">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="📚"
+                                android:textSize="64sp"
+                                android:gravity="center" />
+
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+
+                <!-- App Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="EduTrack"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.02"
+                    android:layout_marginTop="24dp" />
+
+                <!-- Tagline -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Assignment Management Made Simple"
+                    android:textSize="16sp"
+                    android:textColor="#E0E7FF"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <!-- Main Content Card (Overlapping) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="-60dp"
+                android:paddingHorizontal="24dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="16dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="28dp">
+
+                        <!-- Welcome Text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Welcome!"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A202C"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign in to access your assignments"
+                            android:textSize="15sp"
+                            android:textColor="#64748B"
+                            android:layout_marginBottom="32dp" />
+
+                        <!-- Features Grid -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="28dp">
+
+                            <!-- Feature 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:background="#F7FAFC"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:text="📝"
+                                    android:textSize="28sp"
+                                    android:gravity="center"
+                                    android:background="@drawable/icon_circle_bg"
+                                    android:layout_marginEnd="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Track Assignments"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="View and submit your work"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="4dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <!-- Feature 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:background="#F7FAFC"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:text="⏰"
+                                    android:textSize="28sp"
+                                    android:gravity="center"
+                                    android:background="@drawable/icon_bg_cyan"
+                                    android:layout_marginEnd="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Never Miss Deadlines"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Stay on top of due dates"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="4dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <!-- Feature 3 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:background="#F7FAFC">
+
+                                <TextView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:text="⭐"
+                                    android:textSize="28sp"
+                                    android:gravity="center"
+                                    android:background="@drawable/icon_bg_green"
+                                    android:layout_marginEnd="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Monitor Progress"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Check grades and feedback"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="4dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Get Started Button -->
+                        <Button
+                            android:id="@+id/btnLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:text="Get Started"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#667EEA"
+                            android:textAllCaps="false"
+                            app:cornerRadius="14dp"
+                            android:elevation="4dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Additional Info Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="32dp"
+                    android:paddingHorizontal="20dp">
+
+                    <!-- Role-Based Access Info -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        android:layout_marginBottom="24dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="24dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🎓 For Everyone"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#1A202C"
+                                android:layout_marginBottom="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="👨‍🎓"
+                                    android:textSize="24sp"
+                                    android:layout_marginEnd="12dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Students"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="View assignments and submit work"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="2dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="👨‍🏫"
+                                    android:textSize="24sp"
+                                    android:layout_marginEnd="12dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Teachers"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Create assignments and grade submissions"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="2dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="👤"
+                                    android:textSize="24sp"
+                                    android:layout_marginEnd="12dp" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Admins"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#1A202C" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Manage users, courses and system settings"
+                                        android:textSize="13sp"
+                                        android:textColor="#64748B"
+                                        android:layout_marginTop="2dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Contact Admin -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Need access?  "
+                            android:textSize="14sp"
+                            android:textColor="#64748B" />
+
+                        <TextView
+                            android:id="@+id/tv_contact_admin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Admin"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#667EEA"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="4dp" />
+
+                    </LinearLayout>
+
+                    <!-- Footer -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginBottom="32dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Version 1.0.0"
+                            android:textSize="12sp"
+                            android:textColor="#94A3B8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OPAIC • Created by Satyam Kamboj"
+                            android:textSize="11sp"
+                            android:textColor="#94A3B8"
+                            android:layout_marginTop="4dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

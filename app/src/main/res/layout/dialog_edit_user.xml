@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Form Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="👤"
+                android:textSize="32sp"
+                android:gravity="center"
+                android:background="@drawable/icon_circle_bg"
+                android:layout_marginEnd="14dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Information"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#1E293B"
+                    android:letterSpacing="0.01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create or edit user account"
+                    android:textSize="13sp"
+                    android:textColor="#64748B"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Display Name Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display Name *"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F8FAFC"
+            android:padding="4dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="✏️"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:background="@drawable/icon_circle_bg"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Enter display name"
+                android:textSize="15sp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:background="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <!-- Email Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Address *"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F8FAFC"
+            android:padding="4dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="📧"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:background="@drawable/icon_circle_bg"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_user_email"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="user@example.com"
+                android:textSize="15sp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:background="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:inputType="textEmailAddress" />
+
+        </LinearLayout>
+
+        <!-- Role Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Role *"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F8FAFC"
+            android:padding="4dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="🎭"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:background="@drawable/icon_circle_bg"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_user_role"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="admin / teacher / student"
+                android:textSize="15sp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:background="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Role Info Box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FEF3C7"
+            android:padding="10dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="start">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ℹ️"
+                android:textSize="14sp"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Valid roles: admin, teacher, student"
+                android:textSize="11sp"
+                android:textColor="#92400E"
+                android:lineSpacingExtra="2dp" />
+
+        </LinearLayout>
+
+        <!-- Course Assignment Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign to Course (Optional)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F8FAFC"
+            android:padding="4dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="📚"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:background="@drawable/icon_circle_bg"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_assign_course"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="e.g. CS101, IA721001"
+                android:textSize="15sp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:background="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Required Fields Note -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E0F7FA"
+            android:padding="12dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0C4A6E"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fields marked with * are required. Course assignment is optional."
+                android:textSize="12sp"
+                android:textColor="#0C4A6E"
+                android:lineSpacingExtra="2dp" />
+
+        </LinearLayout>
+
+        <!-- Role Examples Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F8FAFC"
+            android:padding="14dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Role Permissions"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1E293B"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👨‍💼 Admin - Full system access"
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👨‍🏫 Teacher - Manage courses &amp; assignments"
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👨‍🎓 Student - View &amp; submit assignments"
+                android:textSize="12sp"
+                android:textColor="#64748B" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

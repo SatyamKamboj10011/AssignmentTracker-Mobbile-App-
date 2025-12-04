@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvAnnTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Announcement title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tvAnnMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Short preview of the message..."
+            android:textSize="14sp"
+            android:textColor="#4B5563"
+            android:layout_marginTop="6dp"
+            android:maxLines="3"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tvAnnCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Course: Example 101"
+            android:textSize="12sp"
+            android:textColor="#2563EB"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/tvAnnTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01 Jan, 10:30 AM"
+            android:textSize="11sp"
+            android:textColor="#9CA3AF"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

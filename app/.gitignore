@@ -1,0 +1,19 @@
+# Android/IntelliJ
+.idea
+.gradle
+local.properties
+
+# Built application files
+*.apk
+*.aar
+*.jar
+
+# Gradle build folders
+/build/
+/app/build/
+
+# Logs
+*.log
+
+# Crashlytics
+crashlytics-build.properties

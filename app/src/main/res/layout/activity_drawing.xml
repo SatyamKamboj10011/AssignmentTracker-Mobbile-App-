@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/draw_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Header Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/headerCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#4F46E5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvDrawTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sketch Pad"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvDrawSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Draw ideas, diagrams, or rough work."
+                android:textSize="13sp"
+                android:textColor="#E0E7FF" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Main drawing surface card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/canvasCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/headerCard"
+        app:layout_constraintBottom_toTopOf="@id/bottomControls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.satyam.assignmenttracker.models.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom controls -->
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Color row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pen color"
+                android:textSize="13sp"
+                android:textColor="#4B5563"
+                android:layout_marginEnd="8dp" />
+
+            <View
+                android:id="@+id/btnColorBlack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/draw_color_black"
+                android:layout_marginEnd="8dp" />
+
+            <View
+                android:id="@+id/btnColorRed"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/draw_color_red"
+                android:layout_marginEnd="8dp" />
+
+            <View
+                android:id="@+id/btnColorBlue"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/draw_color_blue"
+                android:layout_marginEnd="8dp" />
+
+            <View
+                android:id="@+id/btnColorGreen"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/draw_color_green" />
+
+        </LinearLayout>
+
+        <!-- Brush size & eraser row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brush"
+                android:textSize="13sp"
+                android:textColor="#4B5563"
+                android:layout_marginEnd="8dp" />
+
+            <SeekBar
+                android:id="@+id/seekBrushSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="40"
+                android:progress="12" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEraser"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Eraser"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+
+        <!-- Clear / Save -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Clear"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Save to gallery"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:backgroundTint="#4F46E5"
+                android:textColor="#FFFFFF"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
