@@ -1,6 +1,9 @@
 Assignment Tracker – Mobile Application
 
-Developed by: Satyam Kamboj Institution: OPAIC Auckland, New Zealand Course Code: IA721001 – Mobile Application Development Year: 2025
+Developed by: Satyam Kamboj 
+Institution: OPAIC Auckland, New Zealand 
+Course Code: IA721001 – Mobile Application 
+Development Year: 2025
 
 📱 Overview
 
@@ -88,4 +91,6 @@ Assignment Tracker successfully implements a full academic workflow system using
 
 ©️ Author
 
-Satyam Kamboj Assignment Tracker – Mobile App OPAIC Auckland, NZ — 2025
+Satyam Kamboj 
+Assignment Tracker – Mobile App 
+OPAIC Auckland, NZ — 2025
