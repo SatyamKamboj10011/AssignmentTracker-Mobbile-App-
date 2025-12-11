@@ -75,6 +75,57 @@ Organized for scalability and modular function separation.
 
 ✔ Role-based access (Student / Teacher / Admin) ✔ Admin invite code for teacher account creation ✔ Cloud-stored user roles, preventing unauthorized access ✔ Private teacher notes are hidden from students
 
+
+System Workflow
+EduTrack distinguishes between three major user roles — Admin, Teacher, and Student. Each role has a unique set of actions, ensuring secure and controlled assignment management.
+
+Admin Workflow
+Purpose: System configuration and access management.
+Admin can:
+•	Create invite codes for new teachers/admin who wish to register
+•	Approve or assign roles to authenticated users
+•	Monitor system usage and ensure user-role validity
+•	View announcements and assignments, but cannot modify academic content
+•	Create and Edit courses
+•	Assign Courses to teachers
+•	Enroll the Students to courses  
+
+Teacher Workflow
+Purpose: Manage academic content and evaluate student submissions.
+Teacher can:
+•	Create assignments with due dates and descriptions
+•	Upload files (PDF, images, documents) via Cloudinary
+•	Edit or delete assignments
+•	Assign assignments to individual students or all students enrolled in that course
+•	Assign the assignments to students dividing them into groups
+•	View and grade submissions
+•	Add private teacher notes on each assignment (visible only to teacher)
+•	Create announcements visible to all enrolled students
+•	Track assignment status and student engagement
+
+     
+         
+
+     
+
+Student Workflow
+Purpose: Receive, manage, complete, and track assignments.
+Student can:
+•	View enrolled courses
+•	See all active assignments with time left indicators
+•	Download or open assignment files online
+•	Submit files for evaluation (Cloudinary link stored automatically)
+•	Save personal progress notes and mark progress steps (Read, Drafted, Finalized)
+•	Track submission history and view received grades
+•	Read announcements from teachers
+•	Join or view group assignments when applicable
+•	Interact with chatbot
+•	Access the sketchpad
+•	Track the assignments through the calendar tool
+
+  \                      
+
+
 📝 Future Enhancements
 
 Push notifications for deadlines
